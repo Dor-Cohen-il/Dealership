@@ -1,7 +1,28 @@
 <html>
 <head>
-  <!-- Link the style sheet here -->
+<link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/bootstrap.min.css">
 </head>
+<script>
+
+    const logout = async (e) => {
+    //Include the code for logout here.
+    };
+    
+    let checkSession = ()=>{
+      let curr_user = sessionStorage.getItem("username");
+    
+      if (curr_user && curr_user !== "") {
+        document.getElementById("loginlogout").innerHTML = 
+        '<span class="homepage_links">' + curr_user +'</span>' +
+        '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
+      } else {
+        document.getElementById("loginlogout").innerHTML = 
+        '<a class="homepage_links" href="/login">Login</a>'+
+        '<a class="homepage_links"  href="/register">Register</a>'
+      }
+     }
+    </script>
 <div>
   <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
     <div class="container-fluid">
@@ -21,42 +42,47 @@
             <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
           </li>
         </ul>
+        <span class="navbar-text">
+            <div class="loginlink" id="loginlogout">
+            </div>
+            </span>
       </div>
     </div>
   </nav>
   
     <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
       <div class="banner" name="about-header">
-      <!-- Insert header information here -->
+        <h1>About Us</h1>
+  Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.
       </div>
       <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
+      <div class="card" style="width: 30%;" >
+        <img class="card-img-top" src="/static/sara.chen.jpg" alt="Card image">
         <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
+          <p class="title">Sarah Chen</p>
+          <p>Sales Manager</p>
+          <p class="card-text">Sarah excels at guiding her team to achieve ambitious sales targets while ensuring every customer finds their perfect vehicle. She is passionate about creating a positive and transparent car-buying experience for everyone who walks through our doors.</p>
+          <p>sara.chen@cardealership.com</p>
         </div>
       </div>
 
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
+        <img class="card-img-top" src="/static/david.miller.jpg" alt="Card image">
         <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
+          <p class="title">David Miller</p>
+          <p>Senior Mechanic</p>
+          <p class="card-text">David is our go-to expert for all things automotive, with years of experience keeping vehicles running smoothly and safely. His dedication to precision and thorough diagnostics ensures our customers drive away with complete peace of mind.</p>
+          <p>david.miller@cardealership.com</p>
         </div>
       </div>
 
       <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
+        <img class="card-img-top" src="/static/maria.garcia.jpg" alt="Card image">
         <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
+          <p class="title">Maria Garcia</p>
+          <p>Customer Relations Specialist</p>
+          <p class="card-text">Maria is the friendly voice of our dealership, ensuring every customer interaction is met with warmth and efficient solutions. She handles all inquiries and feedback with grace, building lasting relationships that keep our clients coming back.</p>
+          <p>maria.garcia@cardealership.com</p>
         </div>
       </div>
     </div>
